@@ -1,0 +1,16 @@
+default: &default
+  api_email:
+  api_token:
+  api_uri:
+
+development:
+  <<: *default
+  api_email: codetest@tapresearch.com
+  api_token: 76b2ef0268a9177927a95bd4db4b8dbc
+  api_uri: http://staging.tapresearch.com/api/v1/
+
+test:
+  <<: *default
+
+production:
+  <<: *default
