@@ -22,6 +22,8 @@ class TapResearch::API
   base_uri   api_uri
 
 
+  private
+
   def sql_mass_insert_or_update(table_name, keys, values)
     duplicate_update_keys = keys.collect{ |key| "#{key}=VALUES(#{key})" }
     "INSERT INTO #{table_name} (#{keys.join(",")}) VALUES #{values.join(",")} ON DUPLICATE KEY UPDATE #{duplicate_update_keys.join(",")}"

@@ -21,9 +21,6 @@ class TapResearch::API::Campaign < TapResearch::API
     remote_campaigns.each do |remote_campaign|
       remote_campaign = self.get(remote_campaign['id'])
 
-      puts("-" * 80)
-      puts remote_campaign.inspect
-
       campaign_dataset = build_campaign_dataset(remote_campaign, campaign_dataset)
       campaign_quota_dataset = build_campaign_quota_dataset(remote_campaign, campaign_quota_dataset)
       campaign_qualification_dataset = build_campaign_qualification_dataset(remote_campaign, campaign_qualification_dataset)

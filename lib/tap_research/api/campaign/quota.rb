@@ -21,12 +21,7 @@ module TapResearch::API::Campaign::Quota
   end
 
   def build_campaign_quota_sql(campaign_quota_dataset)
-    result = sql_mass_insert_or_update(::CampaignQuota.table_name, campaign_quota_columns, campaign_quota_dataset)
-
-    puts("=" * 80)
-    puts result.inspect
-
-    result
+    sql_mass_insert_or_update(::CampaignQuota.table_name, campaign_quota_columns, campaign_quota_dataset)
   end
 
 end

@@ -23,12 +23,7 @@ module TapResearch::API::Campaign::Qualification
   end
 
   def build_campaign_qualification_sql(campaign_qualification_dataset)
-    result = sql_mass_insert_or_update(::CampaignQualification.table_name, campaign_qualification_columns, campaign_qualification_dataset)
-
-    puts("=" * 80)
-    puts result.inspect
-
-    result
+    sql_mass_insert_or_update(::CampaignQualification.table_name, campaign_qualification_columns, campaign_qualification_dataset)
   end
 
 end

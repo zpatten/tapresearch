@@ -17,12 +17,7 @@ module TapResearch::API::Campaign::Core
   end
 
   def build_campaign_sql(campaign_dataset)
-    result = sql_mass_insert_or_update(::Campaign.table_name, campaign_columns, campaign_dataset)
-
-    puts("=" * 80)
-    puts result.inspect
-
-    result
+    sql_mass_insert_or_update(::Campaign.table_name, campaign_columns, campaign_dataset)
   end
 
 end
