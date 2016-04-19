@@ -13,11 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20160419001827) do
 
-  create_table "campaign_qualifications", force: :cascade do |t|
+  create_table "campaign_qualifications", id: false, force: :cascade do |t|
     t.integer "campaign_quota_id", limit: 4
     t.integer "question_id",       limit: 4
     t.text    "pre_codes",         limit: 65535
   end
+
+  add_index "campaign_qualifications", ["campaign_quota_id", "question_id"], name: "campaign_quota_id_and_question_id", unique: true, using: :btree
 
   create_table "campaign_quota", force: :cascade do |t|
     t.integer "campaign_id", limit: 4
