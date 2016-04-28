@@ -1,0 +1,8 @@
+<% @ordered_questions.each do |key,value| -%>
+<b><%= key %></b><br />
+<ol>
+  <% value.each do |v| %>
+  <li /><%= v.html_safe %>
+  <% end %>
+</ol>
+<% end -%>
